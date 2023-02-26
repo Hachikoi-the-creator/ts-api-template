@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "outDir": "./build/",
+    "module": "commonjs",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  }
+}
