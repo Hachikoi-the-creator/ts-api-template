@@ -1,29 +1,36 @@
 import data from "../data.json";
+import { DogArrOrEmpy, Dog, DogOrEmpty } from "../types/dogData";
+import { getValidID, getValidName, randomID } from "../utils/dogDataParser";
 
-// * Helper functions
-export const getIndexByID = (id: number) => {
-  return data.findIndex((e) => e.id === id);
+// ! Helper functions
+// * Find id of dog
+export const getIndexByID = (id: any): number => {
+  const validID = getValidID(id);
+  // Error since the dog.id is a string and validID is a number...
+  const res = data.findIndex((dog: Dog) => dog.id == validID);
+  return res;
 };
 
-// * Controller functions
+// ! Controller functions
 // * GET all
-export const getAllDoggos = () => {
-  return data || [];
+export const getAllDoggos = (): DogArrOrEmpy => {
+  return data.length ? data : [];
 };
 
 // * GET one
-export const getDoggo = (id: number) => {
-  const index = getIndexByID(id);
+export const getDoggo = (id: any): DogOrEmpty => {
+  const validID = getValidID(id);
+  const res = data.filter((dog: Dog) => dog.id == validID);
 
-  if (index === -1) return { res: "not found" };
-  return data[index];
+  if (!res.length) return [];
+  return res[0];
 };
 
 // * POST one
-export const addDoggo = (name: string) => {
+export const addDoggo = (name: any): Dog => {
   const newDoggo = {
-    id: Math.round(Math.random() * 100),
-    name,
+    id: randomID(),
+    name: getValidName(name),
     age: 13,
     breed: "poggers",
     goodBoy: true,
@@ -34,19 +41,21 @@ export const addDoggo = (name: string) => {
 };
 
 // * UPDATE one
-export const updateDoggo = (id: number, name: string) => {
-  const index = getIndexByID(id);
+export const updateDoggo = (id: any, name: any): DogOrEmpty => {
+  const index = getValidID(id);
+  const validName = getValidName(name);
 
-  if (index === -1) return { res: "not found" };
-  data[index].name = name;
-  return data[index];
+  const doggo = data.find((dog: Dog) => dog.id == index);
+  if (!doggo) throw new Error("Doggo not found");
+  doggo.name = validName;
+  return doggo;
 };
 
 // * DELETE one
 // ! This do not work as intended :c
-export const deleteDoggo = (id: number) => {
+export const deleteDoggo = (id: any): DogOrEmpty => {
   const index = getIndexByID(id);
 
-  if (index === -1) return { res: "not found" };
+  if (index === -1) return {};
   return data.splice(index, 1);
 };
