@@ -1,0 +1,79 @@
+[
+  {
+    "id": 0,
+    "goodBoy": true,
+    "name": "Coconut",
+    "age": 15,
+    "breed": "Labrador woof"
+  },
+  {
+    "id": 1,
+    "goodBoy": true,
+    "name": "Buddy",
+    "age": 5,
+    "breed": "Labrador Retriever"
+  },
+  {
+    "id": 2,
+    "goodBoy": false,
+    "name": "Rocky",
+    "age": 2,
+    "breed": "German Shepherd"
+  },
+  {
+    "id": 3,
+    "goodBoy": true,
+    "name": "Bailey",
+    "age": 7,
+    "breed": "Golden Retriever"
+  },
+  {
+    "id": 4,
+    "goodBoy": true,
+    "name": "Max",
+    "age": 4,
+    "breed": "Siberian Husky"
+  },
+  {
+    "id": 5,
+    "goodBoy": false,
+    "name": "Duke",
+    "age": 3,
+    "breed": "Boxer"
+  },
+  {
+    "id": 6,
+    "goodBoy": true,
+    "name": "Charlie",
+    "age": 6,
+    "breed": "Beagle"
+  },
+  {
+    "id": 7,
+    "goodBoy": false,
+    "name": "Zeus",
+    "age": 2,
+    "breed": "Rottweiler"
+  },
+  {
+    "id": 8,
+    "goodBoy": true,
+    "name": "Cooper",
+    "age": 5,
+    "breed": "Australian Shepherd"
+  },
+  {
+    "id": 9,
+    "goodBoy": false,
+    "name": "Thor",
+    "age": 1,
+    "breed": "Great Dane"
+  },
+  {
+    "id": 10,
+    "goodBoy": true,
+    "name": "Luna",
+    "age": 3,
+    "breed": "Siberian Husky"
+  }
+]
